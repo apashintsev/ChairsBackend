@@ -23,7 +23,18 @@ namespace ChairsBackend.Controllers
             var response = new BaseResponse<Game>(await Mediator.Send(new GetActiveGameQuery()));
             return Ok(response);
         }
-
+        /// <summary>
+        /// Получить текущую активную игру
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [AllowAnonymous]
+        [ProducesResponseType(typeof(BaseResponse<Game>), 200)]
+        public async Task<IActionResult> GetActiveGame2()
+        {
+            var response = new BaseResponse<Game>(await Mediator.Send(new GetActiveGameQuery()));
+            return Ok(response);
+        }
         /// <summary>
         /// Вступить в игру
         /// </summary>
